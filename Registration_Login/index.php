@@ -1,4 +1,16 @@
+<?php   
+	session_start();
+	if(isset($_SESSION['ins']))
+    {
+    ?>
+        <script>
+           alert("<?php echo $_SESSION['ins']; ?>");
+        </script>
 
+      <?php
+      unset($_SESSION['ins']);
+    }
+?>
 <!DOCTYPE html>
 <head>
 <title>Registration / Login Form</title>
@@ -27,7 +39,7 @@
 										<h3>Registration Form :</h3>
 									</div>
 									<div class="form-body form-body-info">
-										<form action="Script/registration." method="post"> 
+										<form action="phpScript/registration.php" method="post"> 
 											<div class="form-group valid-form">
 												<input type="text" class="form-control" id="inputName" name="name" placeholder="Username" required="">
 											</div>
@@ -83,7 +95,7 @@
 											<h3>Login form :</h3>
 										</div>
 										<div class="form-body form-body-info">
-											<form  action="Script/login." method="post">
+											<form  action="phpScript/login.php" method="post">
 												<div class="form-group has-feedback">
 													<input type="email" class="form-control" name="Email" placeholder="Enter Your Email" data-error="Bruh, that email address is invalid" required="">
 													<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -112,7 +124,7 @@
 													<div class="clearfix"> </div>
 												</div>
 												</center>
-												<a href="forgetPass." style="color:white;">Forget Password</a>
+												<a href="forgetPass.php" style="color:white;">Forget Password</a>
 											</form>
 										</div>
 									</div>
@@ -127,7 +139,7 @@
 		</div>		
 		<!-- footer -->
 		<div class="footer">
-		<center><a href="../index.html"><h4 style="color:red;">Back To Home </h4></a></center>
+		<center><a href="../index.php"><h4 style="color:red;">Back To Home </h4></a></center>
 		<p style="color:red ;">© 2022 Designed by Cloud9<p>
 		</div>
 		<!-- //footer -->
